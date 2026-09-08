@@ -47,15 +47,15 @@ if (footerTarget) {
         <footer class="shell footer-inner">
             <div class="card footer-card">
                 <div>
-                    <p class="eyebrow">Placeholder Footer</p>
+                    <p class="eyebrow">Portfolio and Writing</p>
                     <h2>Minh Quynh Nguyen</h2>
-                    <p class="footer-meta">Dummy portfolio content for a GitHub Pages launch.</p>
+                    <p class="footer-meta">Personal website with portfolio pages and selected writing.</p>
                 </div>
                 <div class="footer-links">
                     ${footerLinks}
                 </div>
             </div>
-            <p class="footer-meta">&copy; ${year} Minh Quynh Nguyen. All links, text, and images are placeholder content.</p>
+            <p class="footer-meta">&copy; ${year} Minh Quynh Nguyen. Some sections remain placeholders while the blog can contain full articles and images.</p>
         </footer>
     `;
 }
