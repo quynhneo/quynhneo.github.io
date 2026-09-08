@@ -1,11 +1,9 @@
+const pagePath = window.location.pathname;
+const fromPost = pagePath.includes("/posts/");
+const blogHref = fromPost ? "../../blog.html" : "blog.html";
+
 const navigationItems = [
-    { slug: "home", label: "Home", href: "index.html" },
-    { slug: "about", label: "About", href: "about.html" },
-    { slug: "work", label: "Work", href: "work.html" },
-    { slug: "experience", label: "Experience", href: "experience.html" },
-    { slug: "skills", label: "Skills", href: "skills.html" },
-    { slug: "contact", label: "Contact", href: "contact.html" },
-    { slug: "blog", label: "Blog", href: "blog.html" }
+    { slug: "blog", label: "Blog", href: blogHref }
 ];
 
 const currentPage = document.body.dataset.page;
@@ -24,7 +22,7 @@ if (headerTarget) {
     headerTarget.innerHTML = `
         <header class="site-header">
             <div class="header-inner">
-                <a class="brand-mark" href="index.html">
+                <a class="brand-mark" href="${blogHref}">
                     <span class="brand-orb" aria-hidden="true"></span>
                     <span>Minh Quynh Nguyen</span>
                 </a>
@@ -39,7 +37,6 @@ if (headerTarget) {
 if (footerTarget) {
     const year = new Date().getFullYear();
     const footerLinks = navigationItems
-        .filter((item) => item.slug !== "home")
         .map((item) => `<a href="${item.href}">${item.label}</a>`)
         .join("");
 
@@ -49,13 +46,13 @@ if (footerTarget) {
                 <div>
                     <p class="eyebrow">Portfolio and Writing</p>
                     <h2>Minh Quynh Nguyen</h2>
-                    <p class="footer-meta">Personal website with portfolio pages and selected writing.</p>
+                    <p class="footer-meta">Selected writing and notes.</p>
                 </div>
                 <div class="footer-links">
                     ${footerLinks}
                 </div>
             </div>
-            <p class="footer-meta">&copy; ${year} Minh Quynh Nguyen. Some sections remain placeholders while the blog can contain full articles and images.</p>
+            <p class="footer-meta">&copy; ${year} Minh Quynh Nguyen.</p>
         </footer>
     `;
 }
